@@ -44,11 +44,10 @@ class _BookerState extends State<Booker> {
                       widget.books.like = !widget.books.like;
                     });
                   },
-                  icon: Icon(widget.books.like
-                      ? Icons.favorite
-                      : Icons.favorite_border),
+                  icon:
+                      Icon(widget.books.like ? Icons.favorite : Icons.favorite),
                   iconSize: 26,
-                  color: widget.books.like ? Colors.pink : Colors.grey[700],
+                  color: widget.books.like ? Colors.pink : Colors.white,
                 )
               ],
             ),
