@@ -2,10 +2,16 @@ import 'package:flutter/material.dart';
 
 import 'book.dart';
 
-class Booker extends StatelessWidget {
+class Booker extends StatefulWidget {
   final Book books;
   const Booker({required this.books, Key? key}) : super(key: key);
 
+  @override
+  State<Booker> createState() => _BookerState();
+}
+
+class _BookerState extends State<Booker> {
+  bool like = false;
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -21,15 +27,29 @@ class Booker extends StatelessWidget {
             SizedBox(
               height: 8,
             ),
-            ClipRRect(
-              borderRadius: BorderRadius.circular(8),
-              child: Container(
-                  child: Image(
-                image: AssetImage(
-                  books.image,
+            Stack(
+              children: [
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(8),
+                  child: Container(
+                      child: Image(
+                    image: AssetImage(
+                      widget.books.image,
+                    ),
+                    fit: BoxFit.cover,
+                  )),
                 ),
-                fit: BoxFit.cover,
-              )),
+                IconButton(
+                  onPressed: () {
+                    setState(() {
+                      like = !like;
+                    });
+                  },
+                  icon: Icon(like ? Icons.favorite : Icons.favorite_border),
+                  iconSize: 26,
+                  color: like ? Colors.pink : Colors.grey[700],
+                )
+              ],
             ),
             SizedBox(
               height: 8,
@@ -37,7 +57,7 @@ class Booker extends StatelessWidget {
             Align(
               alignment: Alignment.topLeft,
               child: Text(
-                books.name,
+                widget.books.name,
                 style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
               ),
             ),
@@ -47,7 +67,7 @@ class Booker extends StatelessWidget {
             Align(
               alignment: Alignment.topLeft,
               child: Text(
-                books.publisher,
+                widget.books.publisher,
                 style: TextStyle(fontSize: 14, color: Colors.grey[700]),
               ),
             ),
