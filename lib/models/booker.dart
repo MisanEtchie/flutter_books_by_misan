@@ -11,7 +11,6 @@ class Booker extends StatefulWidget {
 }
 
 class _BookerState extends State<Booker> {
-  bool like = false;
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -42,12 +41,14 @@ class _BookerState extends State<Booker> {
                 IconButton(
                   onPressed: () {
                     setState(() {
-                      like = !like;
+                      widget.books.like = !widget.books.like;
                     });
                   },
-                  icon: Icon(like ? Icons.favorite : Icons.favorite_border),
+                  icon: Icon(widget.books.like
+                      ? Icons.favorite
+                      : Icons.favorite_border),
                   iconSize: 26,
-                  color: like ? Colors.pink : Colors.grey[700],
+                  color: widget.books.like ? Colors.pink : Colors.grey[700],
                 )
               ],
             ),
