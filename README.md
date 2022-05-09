@@ -17,7 +17,7 @@ samples, guidance on mobile development, and a full API reference.
 
 # Screenshots
 
-| Onboarding  | Menu Page | 
+| Onboard ing  | Menu Page | 
 | ------------- | ------------- | 
 | ![Simulator Screen Shot - iPhone 13 - 2022-05-09 at 09 06 30](https://user-images.githubusercontent.com/56762634/167367300-cec9cb28-75b6-41b6-8c9f-ce6baf5eaf87.png)  | ![Simulator Screen Shot - iPhone 13 - 2022-05-09 at 09 06 40](https://user-images.githubusercontent.com/56762634/167367299-4e0a3807-9f5f-4511-b29d-d6eec3afbebd.png)  |
 
