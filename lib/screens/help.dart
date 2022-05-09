@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 
+import '../models/book.dart';
 import '../widgets/zoom_menu.dart';
 
 class Help extends StatelessWidget {
-  const Help({Key? key}) : super(key: key);
+  const Help({
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
