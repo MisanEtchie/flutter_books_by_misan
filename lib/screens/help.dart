@@ -20,6 +20,12 @@ class Help extends StatelessWidget {
           "Help",
         ),
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        backgroundColor: Colors.amber,
+        child: Icon(Icons.send),
+        elevation: 0,
+      ),
     );
   }
 }

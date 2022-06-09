@@ -1,4 +1,6 @@
+//import 'package:books_by_misan_app/screens/menupage.dart' as prefix;
 import 'package:books_by_misan_app/screens/menupage.dart';
+//import 'package:books_by_misan_app/screens/menupage.dart';
 import 'package:books_by_misan_app/screens/welcome.dart';
 import 'package:flutter/material.dart';
 //import 'package:flutter_zoom_drawer/config.dart';
@@ -31,7 +33,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  MenuItem currentItem = MenuItems.books;
+  ItemForMenu currentItem = MenuItems.books;
   @override
   Widget build(BuildContext context) {
     return ZoomDrawer(

@@ -26,50 +26,65 @@ class _InfoState extends State<Info> {
                     children: [
                       Container(
                         width: double.infinity,
-                        height: MediaQuery.of(context).size.height * 0.55,
+                        height: 500,
+                        //MediaQuery.of(context).size.height * 0.55,
                         color: Colors.indigo,
-                      ),
-                      Column(
-                        children: [
-                          Center(
-                            child: Padding(
-                              padding: EdgeInsets.only(
-                                top: MediaQuery.of(context).size.height * 0.1,
-                              ),
-                              child: Column(
-                                children: [
-                                  Image(
-                                    height: Image(
-                                            image:
-                                                AssetImage(widget.books.image))
-                                        .height,
-                                    image: AssetImage(widget.books.image),
-                                    fit: BoxFit.cover,
-                                  ),
-                                  SizedBox(
-                                    height: 20,
-                                  ),
-                                  Text(
-                                    widget.books.name,
-                                    style: TextStyle(
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 18),
-                                  ),
-                                  SizedBox(
-                                    height: 4,
-                                  ),
-                                  Text(
-                                    widget.books.publisher,
-                                    style: TextStyle(
-                                      color: Colors.white,
+                        child: Column(
+                          children: [
+                            Center(
+                              child: Padding(
+                                padding: EdgeInsets.only(
+                                  top: 75,
+                                  //MediaQuery.of(context).size.height * 0.1,
+                                ),
+                                child: Column(
+                                  children: [
+                                    Container(
+                                      height: 300,
+                                      decoration: BoxDecoration(boxShadow: [
+                                        BoxShadow(
+                                            color:
+                                                Colors.black.withOpacity(0.3),
+                                            spreadRadius: 5,
+                                            blurRadius: 5,
+                                            offset: Offset(4, 4))
+                                      ]),
+                                      //MediaQuery.of(context).size.height * 0.3,
+                                      child: Image(
+                                        height: Image(
+                                                image: AssetImage(
+                                                    widget.books.image))
+                                            .height,
+                                        image: AssetImage(widget.books.image),
+                                        fit: BoxFit.cover,
+                                      ),
                                     ),
-                                  )
-                                ],
+                                    SizedBox(
+                                      height: 20,
+                                    ),
+                                    Text(
+                                      widget.books.name,
+                                      style: TextStyle(
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 18),
+                                    ),
+                                    SizedBox(
+                                      height: 4,
+                                    ),
+                                    Text(
+                                      widget.books.publisher,
+                                      style: TextStyle(
+                                        fontSize: 14,
+                                        color: Colors.white,
+                                      ),
+                                    )
+                                  ],
+                                ),
                               ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                     ],
                   ),
@@ -91,7 +106,7 @@ class _InfoState extends State<Info> {
                         Align(
                           alignment: Alignment.topLeft,
                           child: Text(
-                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                             style: TextStyle(fontSize: 16),
                           ),
                         ),
@@ -105,67 +120,66 @@ class _InfoState extends State<Info> {
                             style: TextStyle(fontSize: 16),
                           ),
                         ),
+                        SizedBox(
+                          height: MediaQuery.of(context).size.height * 0.12,
+                        ),
                       ],
                     ),
                   ),
                 ],
               ),
             ),
-            Positioned(
-              bottom: 0,
-              right: 0,
+            Align(
+              alignment: Alignment.bottomCenter,
               child: SafeArea(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    SizedBox(
-                      width: 20,
-                    ),
-                    Container(
-                      height: MediaQuery.of(context).size.height * 0.07,
-                      width: MediaQuery.of(context).size.height * 0.07,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(16),
-                        color: Colors.indigo,
-                      ),
-                      child: GestureDetector(
-                        onTap: (() {
-                          setState(() {
-                            widget.books.like = !widget.books.like;
-                          });
-                        }),
-                        child: Icon(
-                          widget.books.like ? Icons.favorite : Icons.favorite,
-                          size: 32,
-                          color: widget.books.like ? Colors.pink : Colors.white,
+                child: Padding(
+                  padding: const EdgeInsets.only(
+                    bottom: 12.0,
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Container(
+                        height: MediaQuery.of(context).size.height * 0.075,
+                        width: MediaQuery.of(context).size.height * 0.075,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(16),
+                          color: Colors.indigo,
+                        ),
+                        child: GestureDetector(
+                          onTap: (() {
+                            setState(() {
+                              widget.books.like = !widget.books.like;
+                            });
+                          }),
+                          child: Icon(
+                            widget.books.like ? Icons.favorite : Icons.favorite,
+                            size: 28,
+                            color:
+                                widget.books.like ? Colors.pink : Colors.white,
+                          ),
                         ),
                       ),
-                    ),
-                    SizedBox(
-                      width: 12,
-                    ),
-                    Container(
-                      height: MediaQuery.of(context).size.height * 0.07,
-                      width: MediaQuery.of(context).size.width * 0.7,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(16),
-                        color: Colors.indigo,
-                      ),
-                      child: Center(
-                        child: Text(
-                          "Get Book",
-                          style: TextStyle(
-                              fontSize: 16,
-                              color: Colors.white,
-                              height: 1.5,
-                              fontWeight: FontWeight.bold),
+                      Container(
+                        height: MediaQuery.of(context).size.height * 0.075,
+                        width: MediaQuery.of(context).size.width * 0.75,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(14),
+                          color: Colors.indigo,
+                        ),
+                        child: Center(
+                          child: Text(
+                            "Get Book",
+                            style: TextStyle(
+                                fontSize: 16,
+                                color: Colors.white,
+                                height: 1.5,
+                                fontWeight: FontWeight.bold),
+                          ),
                         ),
                       ),
-                    ),
-                    SizedBox(
-                      width: 20,
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
             ),

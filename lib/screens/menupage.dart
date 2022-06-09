@@ -1,25 +1,25 @@
 import 'package:flutter/material.dart';
 
 class MenuItems {
-  static const books = MenuItem("Books", Icons.book);
-  static const liked = MenuItem("Liked", Icons.favorite);
-  static const write = MenuItem("Publish", Icons.edit_note);
-  static const help = MenuItem("Help", Icons.help);
-  static const rate_us = MenuItem("Rate Us", Icons.star_border);
+  static const books = ItemForMenu("Books", Icons.book);
+  static const liked = ItemForMenu("Liked", Icons.favorite);
+  static const write = ItemForMenu("Publish", Icons.edit_note);
+  static const help = ItemForMenu("Help", Icons.help);
+  static const rate_us = ItemForMenu("Rate Us", Icons.star_border);
 
-  static const all = <MenuItem>[books, liked, write, help, rate_us];
+  static const all = <ItemForMenu>[books, liked, write, help, rate_us];
 }
 
-class MenuItem {
+class ItemForMenu {
   final String title;
   final IconData icon;
 
-  const MenuItem(this.title, this.icon);
+  const ItemForMenu(this.title, this.icon);
 }
 
 class MenuPage extends StatelessWidget {
-  final MenuItem currentItem;
-  final ValueChanged<MenuItem> onSelectedItem;
+  final ItemForMenu currentItem;
+  final ValueChanged<ItemForMenu> onSelectedItem;
   const MenuPage({
     Key? key,
     required this.currentItem,
@@ -78,7 +78,7 @@ class MenuPage extends StatelessWidget {
         )),
       );
 
-  Widget buildMenuItem(MenuItem item) => ListTile(
+  Widget buildMenuItem(ItemForMenu item) => ListTile(
         selected: currentItem == item,
         selectedTileColor: Colors.black12,
         minLeadingWidth: 20,

@@ -20,6 +20,7 @@ class Write extends StatelessWidget {
         onPressed: (() {}),
         backgroundColor: Colors.purple,
         child: Icon(Icons.save),
+        elevation: 0,
       ),
     );
   }
